@@ -13,6 +13,10 @@ class Stopwatch {
             miliseconds: 0
         };
     }
+
+    print() {
+        this.display.innerText = this.format(this.times);
+    }
 }
 
 const stopwatch = new Stopwatch(
