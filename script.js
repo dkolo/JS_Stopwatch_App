@@ -60,6 +60,13 @@ class Stopwatch {
         this.running = false;
         clearInterval(this.watch);
     }
+
+    save() {
+        const results = document.getElementById('results');
+        let time = document.createElement('li');
+        results.innerHTML = this.format(this.times);
+        results.appendChild('time');
+    }
 }
 
 const stopwatch = new Stopwatch(

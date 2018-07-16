@@ -80,6 +80,14 @@ var Stopwatch = function () {
             this.running = false;
             clearInterval(this.watch);
         }
+    }, {
+        key: 'save',
+        value: function save() {
+            var results = document.getElementById('results');
+            var time = document.createElement('li');
+            results.innerHTML = this.format(this.times);
+            results.appendChild('time');
+        }
     }]);
 
     return Stopwatch;
