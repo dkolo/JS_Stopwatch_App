@@ -63,12 +63,12 @@ class Stopwatch {
 
     save() {
         function saveResult() {
-                let time = document.createElement('li');
-                time.innerHTML = this.format(this.times);
-                results.appendChild(time);
-            }
-            if (this.format(this.times) !== '00:00:00') {
-                saveResult.call(this);
+            let time = document.createElement('li');
+            time.innerHTML = this.format(this.times);
+            results.appendChild(time);
+        }
+        if (this.format(this.times) !== '00:00:00') {
+            saveResult.call(this);
         }
         else {
             console.log('Błąd zapisu czasu');
