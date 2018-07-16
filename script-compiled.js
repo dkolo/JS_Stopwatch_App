@@ -83,17 +83,23 @@ var Stopwatch = function () {
     }, {
         key: 'save',
         value: function save() {
-            var results = document.getElementById('results');
-            var time = document.createElement('li');
-            results.innerHTML = this.format(this.times);
-            results.appendChild('time');
+            function saveResult() {
+                var time = document.createElement('li');
+                time.innerHTML = this.format(this.times);
+                results.appendChild(time);
+            }
+            if (this.format(this.times) !== '00:00:00') {
+                saveResult.call(this);
+            } else {
+                console.log('Błąd zapisu czasu');
+            }
         }
     }]);
 
     return Stopwatch;
 }();
 
-var stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
+var stopwatch = new Stopwatch(document.querySelector('.stopwatch'), document.getElementById('results'));
 
 var startButton = document.getElementById('start');
 startButton.addEventListener('click', function () {

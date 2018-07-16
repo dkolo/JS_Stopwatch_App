@@ -62,15 +62,23 @@ class Stopwatch {
     }
 
     save() {
-        const results = document.getElementById('results');
-        let time = document.createElement('li');
-        results.innerHTML = this.format(this.times);
-        results.appendChild('time');
+        function saveResult() {
+                let time = document.createElement('li');
+                time.innerHTML = this.format(this.times);
+                results.appendChild(time);
+            }
+            if (this.format(this.times) !== '00:00:00') {
+                saveResult.call(this);
+        }
+        else {
+            console.log('Błąd zapisu czasu');
+        }
     }
 }
 
 const stopwatch = new Stopwatch(
-    document.querySelector('.stopwatch'));
+    document.querySelector('.stopwatch'),
+    document.getElementById('results'));
 
 let startButton = document.getElementById('start');
 startButton.addEventListener('click', () => stopwatch.start());
