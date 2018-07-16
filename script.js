@@ -80,3 +80,6 @@ stopButton.addEventListener('click', () => stopwatch.stop());
 
 let resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => stopwatch.reset());
+
+let saveButton = document.getElementById('save');
+saveButton.addEventListener('click', () => stopwatch.save());

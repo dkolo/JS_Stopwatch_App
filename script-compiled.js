@@ -109,3 +109,8 @@ var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', function () {
     return stopwatch.reset();
 });
+
+var saveButton = document.getElementById('save');
+saveButton.addEventListener('click', function () {
+    return stopwatch.save();
+});
