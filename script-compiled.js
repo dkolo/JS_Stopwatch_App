@@ -95,3 +95,8 @@ var stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', function () {
     return stopwatch.stop();
 });
+
+var resetButton = document.getElementById('reset');
+stopButton.addEventListener('click', function () {
+    return stopwatch.reset();
+});
