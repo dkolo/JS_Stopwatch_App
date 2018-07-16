@@ -30,6 +30,7 @@ var Stopwatch = function () {
                 seconds: 0,
                 miliseconds: 0
             };
+            this.print();
         }
     }, {
         key: 'print',
@@ -97,6 +98,6 @@ stopButton.addEventListener('click', function () {
 });
 
 var resetButton = document.getElementById('reset');
-stopButton.addEventListener('click', function () {
+resetButton.addEventListener('click', function () {
     return stopwatch.reset();
 });

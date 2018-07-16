@@ -19,7 +19,8 @@ class Stopwatch {
             minutes: 0,
             seconds: 0,
             miliseconds: 0
-        };
+        }
+        this.print();
     }
 
     print() {
@@ -71,4 +72,4 @@ let stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', () => stopwatch.stop());
 
 let resetButton = document.getElementById('reset');
-stopButton.addEventListener('click', () => stopwatch.reset());
+resetButton.addEventListener('click', () => stopwatch.reset());
